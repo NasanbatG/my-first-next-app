@@ -1,7 +1,21 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
+import Player from '../components/Player'
+import PlayerCSS from '../components/PlayerCss'
+
 export default function Home() {
+  const videoJsOptions = {
+    techOrder: ['youtube'],
+    autoplay: false,
+    controls: true,
+    sources: [
+      {
+        src: 'https://www.youtube.com/watch?v=v9zvVtqASC8',
+        type: 'video/youtube',
+      },
+    ],
+  }
   return (
     <div className={styles.container}>
       <Head>
@@ -11,42 +25,31 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Тавтай морил: <a href="https://nextjs.org">Next.js!!!</a>
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
+          Энэхүү сайтыг
+          <code className={styles.code}>https://1234.mn/courasae/119</code>{" "} хичээлээр бүтээв
         </p>
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
+            <h3>Миний тухай &rarr;</h3>
+            <p>Би Next.js, React, Javascript технологиудад дуртай.</p>
           </a>
 
           <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
+            <h3>Хобб &rarr;</h3>
+            <p>Сагс тоглох, кино үзэх, хөдөө аялах дуртай</p>
           </a>
+          
+          <a>
+          <Player {...videoJsOptions} />
+      
+          </a>
+         
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
         </div>
       </main>
 
